@@ -1,4 +1,4 @@
-# xiaomi-Bluetooth-themometer
+# xiaomi-Bluetooth-thermometer
 Xiaomi temperature humidity sensor
 
 This is a little script in order to read temperature and humidity from Xiaomi sensor.
