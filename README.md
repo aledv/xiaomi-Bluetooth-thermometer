@@ -15,6 +15,3 @@ T=19.1 H=40.9 B=99%
 *H* is humidity in percent 
 
 *B* is the battery level in percent.
-
-## *Note*
-There is also a script written in Python. That was my first try. I recommend to use the script based on expect since it is faster and more stable.

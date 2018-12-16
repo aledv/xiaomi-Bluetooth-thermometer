@@ -187,7 +187,7 @@ proc disconnect {} {
 proc print {} {
   global device
 
-  puts "$device(measurement) B=$device(battery)%"
+  puts "$device(measurement)% B=$device(battery)%"
 }
 
 parseArgv $argv
