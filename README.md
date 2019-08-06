@@ -7,11 +7,7 @@ This is a little script in order to read temperature and humidity from Xiaomi se
 
 ```
 $ ./xiaomi.exp 4C:65:A8:DA:F3:B1
-T=19.1 H=40.9 B=99%
+Temperature:    22.5°C
+Humidity:       58.7%
+Battery:        65%
 ```
-
-*T* is the temparature in celsius. 
-
-*H* is humidity in percent 
-
-*B* is the battery level in percent.

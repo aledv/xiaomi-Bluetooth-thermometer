@@ -49,7 +49,8 @@ set HANDLES(battery)           "0018"
 set REQUESTS(readMeasurements) "0100"
 
 set device(mac)                ""
-set device(measurement)        ""
+set device(temperature)        ""
+set device(humidity)           ""
 set thermostat(battery)        ""
 
 proc log {l} {
@@ -149,8 +150,13 @@ proc readMeasurements {} {
     exit -1
   }
 
-  set device(measurement) [hexToASCII $raw_value]
+  regexp -all "T=(\[0-9\.\]+) H=(\[0-9\.\]+)" [hexToASCII $raw_value] all temp humidity
+
+  set device(temperature) $temp
+  set device(humidity) $humidity
+
 }
+
 
 proc init {} {
 
@@ -186,8 +192,10 @@ proc disconnect {} {
 
 proc print {} {
   global device
+  puts "Temperature:\t$device(temperature)°C"
+  puts "Humidity:\t$device(humidity)%"
+  puts "Battery:\t$device(battery)%"
 
-  puts "$device(measurement)% B=$device(battery)%"
 }
 
 parseArgv $argv
